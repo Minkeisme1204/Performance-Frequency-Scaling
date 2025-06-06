@@ -96,5 +96,5 @@ EXPORT_SYMBOL(get_cpu_temperature_millicelsius);
 EXPORT_SYMBOL(get_run_queue_length);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Minh Nguyen");
+MODULE_AUTHOR("Nguyen Cao Minh <minhnguyencao1204@gmail.com>");
 MODULE_DESCRIPTION("CPUFreq log feature module for logging CPU data");

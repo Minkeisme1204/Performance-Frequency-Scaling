@@ -6,8 +6,9 @@
 #include <linux/workqueue.h>
 #include <linux/jiffies.h>
 #include "cpufreq_log_feature.h"
+#include "model_inference.h"
 
-#define DEF_SAMPLING_RATE (100) // ms
+#define DEF_SAMPLING_RATE (1000) // ms
 #define DEF_POWERSAVE_BIAS 0
 
 // Forward declaration
@@ -41,7 +42,8 @@ static void modelbased_sample(struct work_struct *work)
 				get_run_queue_length(3); 
 
 	cur_freq = policy->cur;
-
+	new_freq = model_inference(cpu_util, avg_load, temperature, runq);
+	
 	pr_info("Collected: util=%u, load=%u, temp=%u\n", cpu_util, avg_load, temperature);
 
 	// TODO: Replace with decision tree logic
@@ -50,7 +52,6 @@ static void modelbased_sample(struct work_struct *work)
 	if (new_freq != cur_freq) {
 		cpufreq_driver_target(policy, new_freq, CPUFREQ_RELATION_H);
 	}
-
 	// Schedule next sample
 	queue_delayed_work_on(policy->cpu, system_highpri_wq, &data->work, msecs_to_jiffies(data->sampling_rate));
 }
@@ -123,21 +124,43 @@ static struct cpufreq_governor cpufreq_gov_modelbased = {
 	.limits  = modelbased_limits,
 };
 
-// Module info
-MODULE_AUTHOR("Nguyen Cao Minh <minhnguyencao1204@gmail.com>");
-MODULE_DESCRIPTION("CPUFreq governor 'modelbased' based on Softmax Regression ML Algorithm");
-MODULE_LICENSE("GPL");
+
 
 // Register governor
+// static int __init cpu_gov_modelbased_init(void)
+// {	
+// 	pr_info(">>> [modelbased] init function reached <<<\n");
+//     int ret = cpufreq_register_governor(&cpufreq_gov_modelbased);
+//     pr_info("modelbased governor registration: %d\n", ret);
+//     return ret;
+// }
+
+// static void __exit cpu_gov_modelbased_exit(void)
+// {
+// 	cpufreq_unregister_governor(&cpufreq_gov_modelbased);
+// }
+
+// cpufreq_governor_init(cpufreq_gov_modelbased);
+// cpufreq_governor_exit(cpufreq_gov_modelbased);
+
 static int __init cpu_gov_modelbased_init(void)
 {
-	return cpufreq_register_governor(&cpufreq_gov_modelbased);
+    pr_info(">>> modelbased governor init <<<\n");
+    int ret = cpufreq_register_governor(&cpufreq_gov_modelbased);
+    pr_info("register result = %d\n", ret);
+    return ret;
 }
 
 static void __exit cpu_gov_modelbased_exit(void)
 {
-	cpufreq_unregister_governor(&cpufreq_gov_modelbased);
+    cpufreq_unregister_governor(&cpufreq_gov_modelbased);
+    pr_info(">>> modelbased governor exited <<<\n");
 }
 
 module_init(cpu_gov_modelbased_init);
 module_exit(cpu_gov_modelbased_exit);
+
+// Module info
+MODULE_AUTHOR("Nguyen Cao Minh <minhnguyencao1204@gmail.com>");
+MODULE_DESCRIPTION("CPUFreq governor 'modelbased' based on Decision Tree ML Algorithm");
+MODULE_LICENSE("GPL");

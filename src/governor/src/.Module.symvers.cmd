@@ -1,1 +1,0 @@
-savedcmd_/home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/Module.symvers -T /home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/modules.order -i Module.symvers -e 

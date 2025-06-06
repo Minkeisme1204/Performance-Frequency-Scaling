@@ -1,4 +1,0 @@
-0xf0062efa	get_cpu_util	/home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/cpufreq_log_feature	EXPORT_SYMBOL	
-0x6609d9c5	get_loadavg_percent	/home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/cpufreq_log_feature	EXPORT_SYMBOL	
-0xae2ccbb2	get_cpu_temperature_millicelsius	/home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/cpufreq_log_feature	EXPORT_SYMBOL	
-0x5928ab72	get_run_queue_length	/home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/cpufreq_log_feature	EXPORT_SYMBOL	
