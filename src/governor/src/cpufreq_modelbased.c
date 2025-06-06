@@ -47,7 +47,6 @@ static void modelbased_sample(struct work_struct *work)
 	pr_info("Collected: util=%u, load=%u, temp=%u\n", cpu_util, avg_load, temperature);
 
 	// TODO: Replace with decision tree logic
-	new_freq = cur_freq;
 
 	if (new_freq != cur_freq) {
 		cpufreq_driver_target(policy, new_freq, CPUFREQ_RELATION_H);
