@@ -1,0 +1,1 @@
+savedcmd_/home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/test/hello_world.mod := printf '%s\n'   hello_world.o | awk '!x[$$0]++ { print("/home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/test/"$$0) }' > /home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/test/hello_world.mod

@@ -1,0 +1,1 @@
+savedcmd_/home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/test/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/test/Module.symvers -T /home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/test/modules.order -i Module.symvers -e 

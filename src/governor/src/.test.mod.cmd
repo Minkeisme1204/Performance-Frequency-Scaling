@@ -1,0 +1,1 @@
+savedcmd_/home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/test.mod := printf '%s\n'   cpufreq_log_feature.o | awk '!x[$$0]++ { print("/home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/"$$0) }' > /home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/test.mod

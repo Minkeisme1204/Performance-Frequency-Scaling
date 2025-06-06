@@ -1,0 +1,1 @@
+savedcmd_/home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/cpufreq_modelbased.mod := printf '%s\n'   cpufreq_modelbased.o | awk '!x[$$0]++ { print("/home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/"$$0) }' > /home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/cpufreq_modelbased.mod

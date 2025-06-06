@@ -1,0 +1,1 @@
+savedcmd_/home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/test.o := aarch64-linux-gnu-ld -EL  -maarch64elf -z noexecstack --no-warn-rwx-segments   -r -o /home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/test.o @/home/minkeisRaspi5/Desktop/minke/Performance-Frequency-Scaling/src/governor/src/test.mod 
