@@ -4,7 +4,7 @@
 #include <time.h>
 #include <unistd.h>
 
-#define CSV_FILE "../logged_data/data_modelbased.csv"
+#define CSV_FILE "../logged_data/data_ondemand.csv"
 #define SAMPLE 3600
 
 void write_header(FILE *fp) {
